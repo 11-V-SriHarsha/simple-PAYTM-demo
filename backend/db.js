@@ -1,6 +1,7 @@
+require('dotenv').config();
 const mongoose = require('mongoose');
 
-mongoose.connect('mongodb+srv://admin:myPass@cluster0.jtxfm.mongodb.net/PaytmApp')
+mongoose.connect(process.env.MONGO_DB_URL)
     .then(() => {
         console.log("✅ Connected to MongoDB successfully");
     })
